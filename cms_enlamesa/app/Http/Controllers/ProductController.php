@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Ingredient;
 use App\NutritionalValue;
 use App\Product;
 use Illuminate\Http\Request;
@@ -33,8 +34,9 @@ class ProductController extends Controller
      */
     public function create()
     {  
+        $ingredients= Ingredient::all();
         $categories= Category::all();
-        return view('product.create',compact('categories'));
+        return view('product.create',compact('categories','ingredients'));
     }
 
     /**
@@ -45,6 +47,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        return  back()->with('message', 'Success');
         $request->validate([
             'name'=>'required',
             'description'=>'required',

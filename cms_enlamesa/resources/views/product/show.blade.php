@@ -14,6 +14,8 @@
                     <h5 class="card-title">{{$product->name}}</h5>
                     <p class="card-text">Description: {{$product->description}}</p>
                     <p class="card-text">Price: {{$product->price}}</p>
+
+                    {{$product}}
                     <a href="{{route('products.edit', $product)}}" class="btn btn-primary">Edit</a>
                     <a href="{{ URL::previous() }}" class="btn btn-secondary">Back</a>
                 </div>

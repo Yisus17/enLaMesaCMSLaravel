@@ -18,6 +18,7 @@ class CreateNutritionalValuesTable extends Migration
             $table->string('name');
             $table->string('value');
             $table->string('unit');
+            $table->unsignedInteger('product_id'); // Relación con categorias
             $table->timestamps();
         });
     }

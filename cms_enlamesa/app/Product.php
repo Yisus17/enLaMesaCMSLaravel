@@ -10,7 +10,7 @@ class Product extends Model
         return $this->belongsTo(Category::class); //Pertenece a una categoría.
     }
 
-    public function nutritional_value(){ 
-        return $this->belongsTo(NutritionalValue::class); //Pertenece a una categoría.
+    public function ingredient(){
+        return $this->belongsToMany(Ingredient::class); // Muchos a muchos
     }
 }
